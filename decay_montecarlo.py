@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 import random
 import math
 import matplotlib.pyplot as plt
@@ -10,9 +9,11 @@ n0 = 100
 # remaining number of elements
 n = n0
 
-# decay rate, probability of decay per time
+# decay rate, probability of decay per time unit
 lambd = 1e-2
-#lambd = math.log(2)/32
+print("decay rate = %.2f" % lambd)
+
+# theoretical halflife
 halflife = 1/lambd*math.log(2)
 print("halflife = %.2f" % halflife)
 
@@ -31,9 +32,9 @@ td = 10
 # number of decays within td
 d = 0
 
-# function for printing a sample point 
+# print sample point 
 def print_sample(t, n, c=""):
-    print("t =" + "%4.d"%t + ", n =" + "%4.d"%n + " (" + "%6.2f"%(n/n0*100), "%)", c)
+    print("t =%4.d, n =%4.d (%6.2f %%)" % (t, n, n/n0*100), c)
 
 # init PRNG (you may want to use a fixed seed for reproducibility)
 random.seed()
@@ -42,7 +43,7 @@ random.seed()
 for t in range(1000000):
     # number of decays per time unit
     nd = 0
-    # how many remaining elements decay in this time unit
+    # sum up elements which decay in this time unit
     for i in range(n):
         if random.random() < lambd:
             nd += 1

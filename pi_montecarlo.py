@@ -1,5 +1,4 @@
 #!/usr/bin/python2
-
 import random
 from time import clock
 import math

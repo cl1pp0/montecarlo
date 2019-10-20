@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 import random
 
 i_max = 10000
