@@ -24,5 +24,5 @@ error = (cmath.pi - pi_approx) / cmath.pi
 print "%d iterations:" % n_it
 print "pi (approx) =", pi_approx
 print "pi (exact) =", cmath.pi
-print "error = %.2f" % (error*100), "%"
+print "error = %.2f %%" % (error*100)
 print "elapsed time: %3.3f s" % t_delta
